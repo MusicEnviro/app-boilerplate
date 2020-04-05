@@ -6,7 +6,7 @@
 	"build": {
 		"appId": "com.electron.electron-with-create-react-app",
 		"win": {
-			"iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+			"icon": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
 		},
 		"directories": {
 			"buildResources": "public"
@@ -14,14 +14,15 @@
 	},
 	"main": "src/start.js",
 	"dependencies": {
-		"electron": "^8.2.0",
-		"electron-builder": "^22.4.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
 		"typescript": "^3.7.5"
 	},
 	"devDependencies": {
+		"electron-builder": "^22.4.1",
+		"electron-debug": "^3.0.1",
+		"electron": "^8.2.0",
 		"@types/chai": "^4.2.11",
 		"@types/jest": "^24.9.1",
 		"@types/mocha": "^7.0.2",
@@ -36,15 +37,11 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"react-start": "BROWSER=none react-scripts start",
 		"build": "react-scripts build",
-		"eject": "react-scripts eject",
 		"electron-start": "nf start -p 3000",
-		"test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-mocha **/*.spec.ts",
 		"electron": "electron .",
-		"do-electron-start": "node src/start-react",
-		"pack": "build --dir",
-		"dist": "npm run build && electron-builder",
+		"test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-mocha **/*.spec.ts",
+		"dist": "npm run build && electron-builder ./build",
 		"postinstall": "echo '(disabled) install-app-deps'"
 	},
 	"eslintConfig": {

@@ -24,12 +24,23 @@ header {
   background-color: lightgray;
   position: absolute;
   top: 50px;
-  bottom: 50px;
+  bottom: 0px;
   left: 0px;
   right: 0px;
   overflow: hidden;
   padding: 50px;
 }
+
+.script-table {
+  margin-left: 20px;
+}
+
+.script-table>tbody>tr>td:nth-child(1) {
+  font-weight: bold
+}
+
+
+
 
 footer {
   background-color: cornflowerblue;

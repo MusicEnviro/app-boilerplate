@@ -8,6 +8,7 @@ process.env.ELECTRON_START_URL = `http://localhost:${port}`
 const client = new net.Socket()
 
 let startedElectron = false
+
 const tryConnection = () => {
   client.connect({ port }, () => {
     client.end()
@@ -23,5 +24,6 @@ const tryConnection = () => {
 tryConnection()
 
 client.on('error', () => {
+  console.log('no connection to react server')
   setTimeout(tryConnection, 1000)
 })

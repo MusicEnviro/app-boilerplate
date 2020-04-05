@@ -1,2 +1,2 @@
-react: npm run react-start
-electron: npm run do-electron-start
+react: BROWSER=none react-scripts start
+electron: node src/start-react
